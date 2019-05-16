@@ -1528,6 +1528,18 @@ echo
 # Indicate how long this took to run (bash maintained variable ``SECONDS``)
 echo_summary "stack.sh completed in $SECONDS seconds."
 
+echo 
+echo "*********************************"
+echo "****** NetSolver Setups *********"
+echo "*********************************"
+echo "Assuming npp repo is cloned at /opt/stack and on the latest master branch"
+echo "Copying npp/src/schedulers to /opt/stack/nova/npp/schedulers"
+mkdir -p /opt/stack/nova/npp/schedulers/
+cp -a /opt/stack/npp/src/schedulers/. /opt/stack/nova/npp/schedulers/
+touch /opt/stack/nova/npp/__init__.py
+echo "import os, sys" >> /opt/stack/nova/npp/__init__.py
+echo "sys.path.append(os.path.join(os.path.dirname(__file__)))" >> /opt/stack/nova/npp/__init__.py
+echo "Done."
 
 # Restore/close logging file descriptors
 exec 1>&3
