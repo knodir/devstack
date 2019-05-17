@@ -239,7 +239,7 @@ WSGI_MODE=${WSGI_MODE:-"uwsgi"}
 
 # Base GIT Repo URL
 # Another option is https://git.openstack.org
-GIT_BASE=${GIT_BASE:-git://git.openstack.org}
+GIT_BASE=${GIT_BASE:-git://github.com}
 NPP_GIT_BASE=${NPP_GIT_BASE:-git://github.com}
 
 # The location of REQUIREMENTS once cloned
